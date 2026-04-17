@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://c1xyo0gr4o5lw"]
+
+[ext_resource type="Texture2D" uid="uid://rwmrte4siwt1" path="res://assets/elexir_room.png" id="1_20uqf"]
+[ext_resource type="Script" uid="uid://bcbvkut5r1vli" path="res://scenes/rooms/breewing_machine.gd" id="1_bqs7h"]
+[ext_resource type="Shader" uid="uid://dw13yrvulotyn" path="res://scenes/rooms/breewing_machine.gdshader" id="1_meagi"]
+[ext_resource type="Texture2D" uid="uid://ckshqrkk1p2es" path="res://assets/beer_form.png" id="2_bqs7h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_srrs7"]
+shader = ExtResource("1_meagi")
+shader_parameter/liquid_level = 0.38800001843
+shader_parameter/liquid_color = Color(1, 0.7393334, 0.07999998, 0.85882354)
+shader_parameter/foam_color = Color(0.89, 0.89, 0.89, 0.60784316)
+shader_parameter/wave_amplitude = 0.02
+shader_parameter/wave_frequency = 5.22000024795
+shader_parameter/wave_speed = 2.0
+shader_parameter/gravity_angle = 0.0
+shader_parameter/gravity_direction = Vector2(0, 1)
+shader_parameter/foam_thickness = 0.02700000128249999
+shader_parameter/shine_intensity = 0.234000011115
+shader_parameter/add_bubble = true
+shader_parameter/bubble_scale = 10.0
+shader_parameter/bubble_speed = 0.5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_na4b7"]
+atlas = ExtResource("1_20uqf")
+region = Rect2(0, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_meagi"]
+atlas = ExtResource("1_20uqf")
+region = Rect2(320, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqs7h"]
+atlas = ExtResource("1_20uqf")
+region = Rect2(640, 0, 320, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_srrs7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_na4b7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_meagi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqs7h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_meagi"]
+size = Vector2(44, 56)
+
+[node name="BreewingMachine" type="Node2D" unique_id=1391999999]
+script = ExtResource("1_bqs7h")
+
+[node name="Fluid" type="Sprite2D" parent="." unique_id=2038575672]
+material = SubResource("ShaderMaterial_srrs7")
+position = Vector2(160, 108)
+texture = ExtResource("2_bqs7h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1678022959]
+sprite_frames = SubResource("SpriteFrames_srrs7")
+autoplay = "default"
+centered = false
+
+[node name="BarrelPump0" type="Node2D" parent="." unique_id=382972791]
+position = Vector2(256, 139)
+
+[node name="BarrelPump1" type="Node2D" parent="." unique_id=879648702]
+position = Vector2(49, 144)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=564191430]
+z_index = 1
+position = Vector2(267, 28)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=689262912]
+z_index = 2
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_meagi")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

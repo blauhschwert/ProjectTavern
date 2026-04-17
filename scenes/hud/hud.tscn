@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://ddg384s4h202g"]
+
+[ext_resource type="FontFile" uid="uid://cmcaxi4spuphi" path="res://assets/fonts/ARCADECLASSIC.TTF" id="1_cgeww"]
+[ext_resource type="Texture2D" uid="uid://r2vpd72wgnxu" path="res://assets/coins/Coin.png" id="2_c45xl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6kolt"]
+bg_color = Color(0.4, 0.4, 0.4, 0.39215687)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.19, 0.19, 0.19, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0bx4p"]
+
+[sub_resource type="Theme" id="Theme_mgtrf"]
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0.88, 0.49866667, 0, 0.85882354)
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/font_sizes/font_size = 8
+Label/fonts/font = ExtResource("1_cgeww")
+
+[node name="HUD" type="Control" unique_id=427886668]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.089
+offset_bottom = -0.020000458
+grow_horizontal = 2
+
+[node name="TopPanel" type="Panel" parent="." unique_id=2101242223]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 16.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6kolt")
+
+[node name="Coins" type="HBoxContainer" parent="TopPanel" unique_id=646992859]
+layout_mode = 0
+offset_right = 122.666664
+offset_bottom = 16.0
+
+[node name="VSeparator" type="VSeparator" parent="TopPanel/Coins" unique_id=1836117326]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0bx4p")
+
+[node name="Label" type="Label" parent="TopPanel/Coins" unique_id=1195817008]
+layout_mode = 2
+theme = SubResource("Theme_mgtrf")
+text = "Gold"
+
+[node name="TextureRect" type="TextureRect" parent="TopPanel/Coins" unique_id=594507126]
+layout_mode = 2
+texture = ExtResource("2_c45xl")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="Label2" type="Label" parent="TopPanel/Coins" unique_id=422125537]
+layout_mode = 2
+theme = SubResource("Theme_mgtrf")
+text = ":         "
+horizontal_alignment = 1

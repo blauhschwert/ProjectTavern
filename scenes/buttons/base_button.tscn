@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cg82tmaewghgh"]
+
+[ext_resource type="Theme" uid="uid://be8fxvct8w6yo" path="res://assets/themes/tavern_base_theme.tres" id="1_0os8n"]
+
+[node name="BaseButton" type="Button" unique_id=726429154]
+custom_minimum_size = Vector2(30, 12)
+offset_right = 39.0
+offset_bottom = 20.0
+scale = Vector2(1, 1.0355285)
+theme = ExtResource("1_0os8n")
+text = "Hello"

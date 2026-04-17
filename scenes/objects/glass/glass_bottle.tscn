@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://lq8ct75h61a4"]
+
+[ext_resource type="Texture2D" uid="uid://cs1m7mk3gom1m" path="res://assets/beer_cane.png" id="1_rc34w"]
+
+[node name="GlassBottle" type="Node2D" unique_id=1287212503]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=669229899]
+texture = ExtResource("1_rc34w")
+hframes = 5

@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://clv64dgdgwsdt"]
+
+[ext_resource type="Texture2D" uid="uid://d0v0o63op5o7b" path="res://assets/barrel.png" id="1_ipomw"]
+[ext_resource type="Script" uid="uid://vpx1fmtjoaj1" path="res://scenes/objects/barrel.gd" id="1_ky1ul"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipomw"]
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="Barrel" type="Node2D" unique_id=435961538]
+position = Vector2(107, 60)
+script = ExtResource("1_ky1ul")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=988011728]
+texture = ExtResource("1_ipomw")
+
+[node name="BarrelLoad" type="Control" parent="." unique_id=1114731273]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -20.0
+offset_top = -17.0
+offset_right = 20.0
+offset_bottom = -17.0
+grow_horizontal = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="BarrelLoad" unique_id=359148361]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_ipomw")
+max_value = 10.0
+step = 1.0
+show_percentage = false
+
+[node name="IncreaseLoad" type="Timer" parent="." unique_id=885880513]
+wait_time = 0.3
+autostart = true
+
+[connection signal="timeout" from="IncreaseLoad" to="." method="_on_increase_load_timeout"]

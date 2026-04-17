@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cbcowy4qnied5"]
+
+[ext_resource type="Script" uid="uid://dp8ex7b0t2m5o" path="res://scenes/objects/beer_output.gd" id="1_b26ug"]
+[ext_resource type="Shader" uid="uid://d4g4ikvr61eau" path="res://beer_output.gdshader" id="1_h40h5"]
+[ext_resource type="Texture2D" uid="uid://clhh3u0lp4wfw" path="res://assets/beer_output.png" id="2_5qxl0"]
+[ext_resource type="Texture2D" uid="uid://buqb0nxwcb31r" path="res://assets/toke..png" id="3_5qxl0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h40h5"]
+shader = ExtResource("1_h40h5")
+shader_parameter/speed = 1.0
+shader_parameter/line_width = 0.15
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/pause_duration = 0.15
+shader_parameter/offset = 2.0
+shader_parameter/pixelate_line = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h40h5"]
+size = Vector2(24, 29)
+
+[node name="BeerOutput" type="Node2D" unique_id=346356018]
+z_index = 1
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_b26ug")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1402981825]
+material = SubResource("ShaderMaterial_h40h5")
+texture = ExtResource("2_5qxl0")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=572732989]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1905906500]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_h40h5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1757635218]
+position = Vector2(0, -22.857143)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_5qxl0")

@@ -1,0 +1,53 @@
+[gd_resource type="Theme" format=3 uid="uid://be8fxvct8w6yo"]
+
+[ext_resource type="FontFile" uid="uid://cmcaxi4spuphi" path="res://assets/fonts/ARCADECLASSIC.TTF" id="1_t1hm0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu41y"]
+bg_color = Color(0.43, 0.2697533, 0.060199995, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.25882354, 0.16470589, 0.03529412, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u18qb"]
+bg_color = Color(0.43, 0.2697533, 0.060199995, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 4
+border_color = Color(0.23, 0.14428666, 0.032199997, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 1
+shadow_offset = Vector2(0.45, 0.7)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t1hm0"]
+bg_color = Color(0.26, 0.16310665, 0.036399994, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.43, 0.2697533, 0.060199995, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 1
+shadow_offset = Vector2(0.45, 0.7)
+
+[resource]
+Button/font_sizes/font_size = 12
+Button/fonts/font = ExtResource("1_t1hm0")
+Button/styles/hover = SubResource("StyleBoxFlat_uu41y")
+Button/styles/normal = SubResource("StyleBoxFlat_u18qb")
+Button/styles/pressed = SubResource("StyleBoxFlat_t1hm0")

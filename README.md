@@ -30,3 +30,8 @@ Theme interpretation: *Growth / Automation / Time* (adapt if needed)
 
 ## 🚀 Play the Game
 👉 Play on itch.io: https://blauhschwert.itch.io/projecttavern
+
+## Resourcess 
+	Shaders:
+		- outline : https://godotshaders.com/shader/highlight-shader-godot-4-5-compat/
+		- beer water : https://godotshaders.com/shader/2d-liquid-wave/
